@@ -7,8 +7,12 @@
     (flake-utils.lib.eachDefaultSystem (system:
       let pkgs = nixpkgs.legacyPackages.${system};
       in with pkgs; rec {
+        devShell = pkgs.mkShell {
+          buildInputs = [hyprland.packages.${system}.hyprland];
+          inputsFrom = [hyprland.packages.${system}.hyprland];
+        };
         packages = rec {
-          hyprload = import ./default.nix { inherit (hyprland.packages.${system}) hyprland; };
+          hyprload = import ./default.nix { inherit (hyprland.packages.${system}) hyprland; pkgs = pkgs; };
           default = hyprload;
         };
         apps = rec {

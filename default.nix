@@ -1,2 +1,2 @@
-{ pkgs ? import <nixpkgs> {}, hyprland }:
-pkgs.callPackage ./default.nix { inherit hyprland; }
+{ pkgs, hyprland }:
+pkgs.callPackage ./derivation.nix { inherit hyprland; }

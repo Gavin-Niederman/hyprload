@@ -2,13 +2,14 @@
   lib,
   stdenv,
   hyprland,
+  pkgs,
 }:
 stdenv.mkDerivation {
   pname = "hyprload";
   version = "0.1.0";
   src = ./.;
 
-  inherit (hyprland) nativeBuildInputs;
+  nativeBuildInputs = with pkgs; [ polkit ] ++ hyprland.nativeBuildInputs;
 
   buildInputs = [hyprland] ++ hyprland.buildInputs;
 
