@@ -13,7 +13,7 @@
           HYPRLAND_HEADERS = "${hyprland.packages.${system}.hyprland.dev}/include";
         };
         packages = rec {
-          hyprload = import ./default.nix { inherit (hyprland.packages.${system}) hyprland; pkgs = pkgs; };
+          hyprload = import ./default.nix { hyprland = hyprland.packages.${system}.hyprland; pkgs = pkgs; };
           default = hyprload;
         };
         apps = rec {

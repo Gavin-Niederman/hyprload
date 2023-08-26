@@ -4,7 +4,7 @@ stdenv.mkDerivation rec {
   version = "0.1.0";
   src = ./.;
 
-  inherit (hyprland) nativeBuildInputs;
+  nativeBuildInputs = with pkgs; [ hyprland pkg-config jq wayland-scanner makeWrapper ];
 
   buildInputs = [ hyprland ] ++ hyprland.buildInputs;
 
