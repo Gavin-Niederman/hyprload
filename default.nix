@@ -1,2 +1,2 @@
 { pkgs, hyprland }:
-pkgs.callPackage ./derivation.nix { inherit hyprland; }
+pkgs.callPackage ./derivation.nix { hyprland = hyprland; }

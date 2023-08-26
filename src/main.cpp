@@ -1,5 +1,5 @@
-#include "globals.hpp"
-#include "util.hpp"
+#include "../include/globals.hpp"
+#include "../include/util.hpp"
 
 #include <hyprland/src/helpers/Monitor.hpp>
 #include <hyprland/src/plugins/PluginAPI.hpp>

@@ -10,6 +10,7 @@
         devShell = pkgs.mkShell {
           buildInputs = [hyprland.packages.${system}.hyprland];
           inputsFrom = [hyprland.packages.${system}.hyprland];
+          HYPRLAND_HEADERS = "${hyprland.packages.${system}.hyprland.dev}/include";
         };
         packages = rec {
           hyprload = import ./default.nix { inherit (hyprland.packages.${system}) hyprland; pkgs = pkgs; };
