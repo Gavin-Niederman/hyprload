@@ -61,9 +61,6 @@ namespace hyprload {
     }
 
     bool Hyprload::checkIfHyprloadFullyCompatible() {
-        // Don't mind me
-        return true;
-
         std::string hyprlandCommitWhenBuilt;
 
         std::ifstream commitFile(hyprload::getRootPath() / "hyprload.hlcommit");
