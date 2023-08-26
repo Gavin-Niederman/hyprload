@@ -13,8 +13,8 @@ stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-    mkdir -p $out/share
-    cp hyprload.so $out/share
+    mkdir -p $out/lib
+    cp hyprload.so $out/lib
   '';
 
   meta = with lib; {
